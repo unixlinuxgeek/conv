@@ -1,0 +1,6 @@
+github.com/unixlinuxgeek/lenconv v0.1.0 h1:c3q+iG58Kixid7jo7gbWuYRY3m+vw1gpSPGeT3/Hujs=
+github.com/unixlinuxgeek/lenconv v0.1.0/go.mod h1:iXNu8MKyx0vml2UwDPO03VvrTwahcAPblO9W4wun2j8=
+github.com/unixlinuxgeek/lenconv v0.1.1 h1:vy7HRwkUbLRwjAfZBzEq9JT9AMTPGIkutOlfyuImWHU=
+github.com/unixlinuxgeek/lenconv v0.1.1/go.mod h1:IJdInk17GTqnLc1+D0BpMBUMI8SawCU5n6gK8o3yo2s=
+github.com/unixlinuxgeek/tempconv v0.3.2 h1:ChGFCQGQiWJrvUDPh8vIRyEdKZ+9LV6xjpCXx0zIJwc=
+github.com/unixlinuxgeek/tempconv v0.3.2/go.mod h1:2nh0Jl7lr18LomnhwS+Wo7qYZN0dcUG9r7Xsq27KdBk=
