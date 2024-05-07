@@ -9,8 +9,10 @@ package main
 
 import (
 	"fmt"
+	"github.com/unixlinuxgeek/dimsconv"
 	"github.com/unixlinuxgeek/lenconv"
 	"github.com/unixlinuxgeek/tempconv"
+	"github.com/unixlinuxgeek/wtconv"
 	"os"
 	"strconv"
 )
@@ -30,6 +32,15 @@ func main() {
 			ft := lenconv.Ft(t)
 			met := lenconv.Meter(t)
 			fmt.Printf("%s = %s, %s = %s\n", ft, lenconv.FtToMet(ft), met, lenconv.MetToFt(met))
+
+			kg := wtconv.Kg(t)
+			lb := wtconv.Lb(t)
+			fmt.Printf("%s = %s, %s = %s\n", kg, wtconv.KgToLb(kg), lb, wtconv.LbToKg(lb))
+
+			cm := dimsconv.Cm(t)
+			i := dimsconv.Inch(t)
+			fmt.Printf("%s = %s, %s = %s\n", cm, dimsconv.CmToInch(cm), i, dimsconv.InchToCm(i))
+
 		}
 	}
 }
