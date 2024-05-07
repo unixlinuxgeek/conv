@@ -8,6 +8,7 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"github.com/unixlinuxgeek/dimsconv"
 	"github.com/unixlinuxgeek/lenconv"
@@ -15,32 +16,47 @@ import (
 	"github.com/unixlinuxgeek/wtconv"
 	"os"
 	"strconv"
+	"strings"
 )
 
 func main() {
 	if len(os.Args) > 1 {
 		for _, arg := range os.Args[1:] {
-			t, err := strconv.ParseFloat(arg, 64)
-			if err != nil {
-				fmt.Fprintf(os.Stdout, "%v\n", err)
-				os.Exit(1)
-			}
-			f := tempconv.Fahrenheit(t)
-			c := tempconv.Celsius(t)
-			fmt.Printf("%s = %s, %s = %s\n", f, tempconv.FahToCel(f), c, tempconv.CelToFah(c))
+			conv(arg)
+		}
+	} else {
+		s := bufio.NewReader(os.Stdin)
+		defer os.Stdin.Close() // prevent memory leak
 
-			ft := lenconv.Ft(t)
-			met := lenconv.Meter(t)
-			fmt.Printf("%s = %s, %s = %s\n", ft, lenconv.FtToMet(ft), met, lenconv.MetToFt(met))
+		a, _ := s.ReadString('\n')
 
-			kg := wtconv.Kg(t)
-			lb := wtconv.Lb(t)
-			fmt.Printf("%s = %s, %s = %s\n", kg, wtconv.KgToLb(kg), lb, wtconv.LbToKg(lb))
-
-			cm := dimsconv.Cm(t)
-			i := dimsconv.Inch(t)
-			fmt.Printf("%s = %s, %s = %s\n", cm, dimsconv.CmToInch(cm), i, dimsconv.InchToCm(i))
-
+		w := strings.Fields(a)
+		for _, a := range w {
+			conv(a)
 		}
 	}
+}
+
+func conv(arg string) {
+	t, err := strconv.ParseFloat(arg, 64)
+	if err != nil {
+		fmt.Fprintf(os.Stdout, "%v\n", err)
+		os.Exit(1)
+	}
+	f := tempconv.Fahrenheit(t)
+	c := tempconv.Celsius(t)
+	fmt.Printf("%s = %s, %s = %s\n", f, tempconv.FahToCel(f), c, tempconv.CelToFah(c))
+
+	ft := lenconv.Ft(t)
+	met := lenconv.Meter(t)
+	fmt.Printf("%s = %s, %s = %s\n", ft, lenconv.FtToMet(ft), met, lenconv.MetToFt(met))
+
+	kg := wtconv.Kg(t)
+	lb := wtconv.Lb(t)
+	fmt.Printf("%s = %s, %s = %s\n", kg, wtconv.KgToLb(kg), lb, wtconv.LbToKg(lb))
+
+	cm := dimsconv.Cm(t)
+	i := dimsconv.Inch(t)
+	fmt.Printf("%s = %s, %s = %s\n", cm, dimsconv.CmToInch(cm), i, dimsconv.InchToCm(i))
+	fmt.Println()
 }
