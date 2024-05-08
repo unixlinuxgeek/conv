@@ -25,6 +25,7 @@ func main() {
 			conv(arg)
 		}
 	} else {
+		fmt.Print("Введите значение: ")
 		s := bufio.NewReader(os.Stdin)
 		defer os.Stdin.Close() // prevent memory leak
 
@@ -37,6 +38,10 @@ func main() {
 	}
 }
 
+// "github.com/unixlinuxgeek/dimsconv"
+// "github.com/unixlinuxgeek/lenconv"
+// "github.com/unixlinuxgeek/tempconv"
+// "github.com/unixlinuxgeek/wtconv"
 func conv(arg string) {
 	t, err := strconv.ParseFloat(arg, 64)
 	if err != nil {
