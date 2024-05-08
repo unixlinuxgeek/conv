@@ -38,6 +38,8 @@ func main() {
 	}
 }
 
+//	Using go modules:
+//
 // "github.com/unixlinuxgeek/dimsconv"
 // "github.com/unixlinuxgeek/lenconv"
 // "github.com/unixlinuxgeek/tempconv"
