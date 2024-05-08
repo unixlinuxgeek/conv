@@ -11,6 +11,7 @@ import (
 	"bufio"
 	"fmt"
 	"github.com/unixlinuxgeek/dimsconv"
+	"github.com/unixlinuxgeek/freqconv"
 	"github.com/unixlinuxgeek/lenconv"
 	"github.com/unixlinuxgeek/tempconv"
 	"github.com/unixlinuxgeek/wtconv"
@@ -40,10 +41,11 @@ func main() {
 
 //	Using go modules:
 //
-// "github.com/unixlinuxgeek/dimsconv"
-// "github.com/unixlinuxgeek/lenconv"
-// "github.com/unixlinuxgeek/tempconv"
-// "github.com/unixlinuxgeek/wtconv"
+// "github.com/unixlinuxgeek/dimsconv" // dimension converter Go module
+// "github.com/unixlinuxgeek/lenconv"  // length converter Go module
+// "github.com/unixlinuxgeek/tempconv" // temperatures converter Go module
+// "github.com/unixlinuxgeek/wtconv"   // weight converter Go module
+// "github.com/unixlinuxgeek/freqconv" // frequency converter Go module
 func conv(arg string) {
 	t, err := strconv.ParseFloat(arg, 64)
 	if err != nil {
@@ -65,5 +67,9 @@ func conv(arg string) {
 	cm := dimsconv.Cm(t)
 	i := dimsconv.Inch(t)
 	fmt.Printf("%s = %s, %s = %s\n", cm, dimsconv.CmToInch(cm), i, dimsconv.InchToCm(i))
+
+	hz := freqconv.Hertz(t)
+	kHz := freqconv.Kilohertz(t)
+	fmt.Printf("%s = %s, %s = %s\n", hz, freqconv.HzToKHz(hz), kHz, freqconv.KHzToHz(kHz))
 	fmt.Println()
 }
