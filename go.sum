@@ -1,5 +1,7 @@
 github.com/unixlinuxgeek/dimsconv v0.1.0 h1:f5301W3PTuDOZHsrOo/3D3vD1aDDFYNf/TFdIA960Qk=
 github.com/unixlinuxgeek/dimsconv v0.1.0/go.mod h1:S9faaF9Wj0kK0f5CL0aPVjomzqWa7VRq+7yWt6iuep0=
+github.com/unixlinuxgeek/dimsconv v0.1.5 h1:PS0HabsuCvSN9GyLH9DfhqogStHDugC412wFlE3CGCI=
+github.com/unixlinuxgeek/dimsconv v0.1.5/go.mod h1:S9faaF9Wj0kK0f5CL0aPVjomzqWa7VRq+7yWt6iuep0=
 github.com/unixlinuxgeek/lenconv v0.1.0 h1:c3q+iG58Kixid7jo7gbWuYRY3m+vw1gpSPGeT3/Hujs=
 github.com/unixlinuxgeek/lenconv v0.1.0/go.mod h1:iXNu8MKyx0vml2UwDPO03VvrTwahcAPblO9W4wun2j8=
 github.com/unixlinuxgeek/lenconv v0.1.1 h1:vy7HRwkUbLRwjAfZBzEq9JT9AMTPGIkutOlfyuImWHU=
