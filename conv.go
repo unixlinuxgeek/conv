@@ -25,7 +25,7 @@ func main() {
 			conv(arg)
 		}
 	} else {
-		fmt.Print("Введите значение: ")
+		fmt.Print("Введите значения: ")
 		s := bufio.NewReader(os.Stdin)
 		defer os.Stdin.Close() // prevent memory leak
 
