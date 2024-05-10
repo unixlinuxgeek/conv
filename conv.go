@@ -11,6 +11,7 @@ import (
 	"bufio"
 	"fmt"
 	"github.com/unixlinuxgeek/dimsconv"
+	"github.com/unixlinuxgeek/freqconv"
 	"github.com/unixlinuxgeek/lenconv"
 	"github.com/unixlinuxgeek/tempconv"
 	"github.com/unixlinuxgeek/wtconv"
@@ -65,5 +66,10 @@ func conv(arg string) {
 	cm := dimsconv.Cm(t)
 	i := dimsconv.Inch(t)
 	fmt.Printf("%s = %s, %s = %s\n", cm, dimsconv.CmToInch(cm), i, dimsconv.InchToCm(i))
+
+	kh := freqconv.Kilohertz(t)
+	hz := freqconv.Hertz(t)
+	fmt.Printf("%s = %s, %s = %s\n", kh, freqconv.KHzToHz(kh), hz, freqconv.HzToKHz(hz))
 	fmt.Println()
+
 }
